@@ -1,11 +1,11 @@
 require('dotenv').config()
 const express = require('express')
 const app = express();
+const routerMain = require('./routes');
+const port = 3000
 
-app.get('/', () => {
-  console.log("Rodando")
-})
+app.use('/principal', routerMain)
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`Rodando na porta ${process.env.PORT}`)
 })
